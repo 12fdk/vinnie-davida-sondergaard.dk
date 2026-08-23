@@ -5,6 +5,7 @@ The **production marketing site** for Vinnie Davida Søndergaard — a static si
 HTML, one shared stylesheet, and a handful of small progressive-enhancement
 scripts.
 
+
 **Live URL:** https://vinnie-davida-sondergaard.dk
 
 ## The three focuses
