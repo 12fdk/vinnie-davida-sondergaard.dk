@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Set html.js before paint so .reveal start-state applies without a flash
+     (progressive enhancement — see assets/js/reveal.js). -->
+<script>document.documentElement.classList.add('js');</script>
+<title>Vinnie Davida Søndergaard — Klinik, Workout & People & Performance</title>
+<link rel="canonical" href="https://rhjensen79.github.io/davida/">
+<meta name="description" content="Jeg er drevet af at udvikle og optimere mennesker — fysiurgisk massage, udendørs TRX-træning og People & Performance til mennesker og organisationer.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="assets/images/source/favicon.png">
+<link rel="apple-touch-icon" href="assets/images/source/favicon.png">
+<meta name="theme-color" content="#2c3f46">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vinnie Davida Søndergaard">
+<meta property="og:locale" content="da_DK">
+<meta property="og:title" content="Vinnie Davida Søndergaard — Klinik, Workout & People & Performance">
+<meta property="og:description" content="Jeg er drevet af at udvikle og optimere mennesker — fysiurgisk massage, udendørs TRX-træning og People & Performance til mennesker og organisationer.">
+<meta property="og:url" content="https://rhjensen79.github.io/davida/">
+<meta property="og:image" content="https://rhjensen79.github.io/davida/assets/images/source/vinnie-davida-soendergaard-photo-martin-kaufmann-dsc-3793.jpg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vinnie Davida Søndergaard — Klinik, Workout & People & Performance">
+<meta name="twitter:description" content="Jeg er drevet af at udvikle og optimere mennesker — fysiurgisk massage, udendørs TRX-træning og People & Performance til mennesker og organisationer.">
+<meta name="twitter:image" content="https://rhjensen79.github.io/davida/assets/images/source/vinnie-davida-soendergaard-photo-martin-kaufmann-dsc-3793.jpg">
+<!-- Preload the first (top-left) focus-tile image — the likely LCP element. -->
+<link rel="preload" as="image" href="assets/images/source/vinnie-davida-soendergaard-photo-martin-kaufmann-dsc-4499.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<style>
+  body { background: var(--c-wash); }
+  header.hero {
+    text-align: center; padding: 88px 24px 56px; background: var(--c-slate); color: #fff;
+  }
+  header.hero .brand {
+    font-family: var(--font-head); text-transform: uppercase; letter-spacing: .35em;
+    font-size: 14px; color: var(--c-sage); margin-bottom: 22px;
+  }
+  header.hero h1 {
+    font-size: clamp(30px, 5vw, 52px); font-weight: 500; max-width: 16ch; margin: 0 auto .4em;
+  }
+  header.hero p { max-width: 56ch; margin: 0 auto; color: #cdd4cf; font-size: 17px; }
+
+  /* Four equal focus tiles in a row (wraps to 2-up, then 1-up on smaller screens). */
+  .focuses { max-width: 1180px; margin: -36px auto 0; padding: 0 24px 72px;
+    display: grid; gap: 22px; grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 980px){ .focuses { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px){ .focuses { grid-template-columns: 1fr; } }
+  .tile {
+    position: relative; border-radius: 16px; overflow: hidden; text-decoration: none;
+    min-height: 460px; display: flex; flex-direction: column; justify-content: flex-end;
+    color: #fff; box-shadow: 0 20px 40px -24px rgba(0,0,0,.4);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .tile:hover { transform: translateY(-6px); box-shadow: 0 28px 54px -24px rgba(0,0,0,.5); }
+  .tile .bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform .5s ease; }
+  .tile:hover .bg { transform: scale(1.05); }
+  .tile .veil { position: absolute; inset: 0; }
+  .tile .body { position: relative; padding: 28px; }
+  .tile .tag { font-family: var(--font-head); text-transform: uppercase; letter-spacing: .18em; font-size: 12px; color: var(--c-gold); }
+  .tile h2 { font-size: 30px; margin: 6px 0 8px; }
+  .tile p { margin: 0 0 16px; font-size: 15px; opacity: .92; max-width: 34ch; }
+  .tile .go { font-family: var(--font-head); text-transform: uppercase; letter-spacing: .1em; font-size: 13px;
+    border-top: 1px solid rgba(255,255,255,.3); padding-top: 14px; }
+
+  /* Klinik — light & calm */
+  .c-klinik .bg { background-image: url('assets/images/source/vinnie-davida-soendergaard-photo-martin-kaufmann-dsc-4499.jpg'); }
+  .c-klinik .veil { background: linear-gradient(180deg, rgba(240,243,240,0) 30%, rgba(44,63,70,.78) 100%); }
+
+  /* Workout — bold & dark */
+  .c-workout .bg { background-image: url('assets/images/source/split-trx.jpg'); }
+  .c-workout .veil { background: linear-gradient(180deg, rgba(8,13,18,.15) 20%, rgba(8,13,18,.88) 100%); }
+  .c-workout h2 { text-transform: uppercase; letter-spacing: .02em; }
+
+  /* People & Performance — refined slate */
+  .c-pp .bg { background-image: url('assets/images/source/vinnie-davida-soendergaard-photo-martin-kaufmann-dsc-3914-1.jpg'); }
+  .c-pp .veil { background: linear-gradient(180deg, rgba(44,63,70,.25) 0%, rgba(44,63,70,.92) 100%); }
+
+  /* Om — same image-tile style and size as the other three. */
+  .c-om .bg { background-image: url('assets/images/source/vinnie-davida-soendergaard-portrait-muusfoto.jpg');
+    background-position: center top; }
+  .c-om .veil { background: linear-gradient(180deg, rgba(8,13,18,.12) 25%, rgba(8,13,18,.9) 100%); }
+
+  /* Landing footer tone: dark slate, on the pale-green page */
+  .site-footer { --foot-bg: var(--c-slate); --foot-fg: #cdd4cf; --foot-head: #fff; --foot-link: #fff; }
+</style>
+
+<!-- Structured data (#23): the person/brand behind all three focuses. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Vinnie Davida Søndergaard",
+  "url": "https://rhjensen79.github.io/davida/",
+  "image": "https://rhjensen79.github.io/davida/assets/images/source/vinnie-davida-soendergaard-portrait-muusfoto.jpg",
+  "jobTitle": "Fysiurgisk massør, træner & people-and-performance-rådgiver",
+  "description": "Jeg er drevet af at udvikle og optimere mennesker — fysiurgisk massage, udendørs TRX-træning og People & Performance til mennesker og organisationer.",
+  "telephone": "+4525616000",
+  "email": "vinnie@davida-sondergaard.dk",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Vejlegade 12, kld. th.",
+    "postalCode": "2100",
+    "addressLocality": "København Ø",
+    "addressCountry": "DK"
+  },
+  "sameAs": [
+    "https://www.facebook.com/lifepoweredthroughinside",
+    "https://www.instagram.com/vinnie_davida_sondergaard"
+  ],
+  "knowsAbout": ["Fysiurgisk massage", "TRX", "Funktionel træning", "Performance", "Trivsel", "Selvledelse"]
+}
+</script>
+</head>
+<body>
+  <header class="hero">
+    <div class="brand">Vinnie Davida Søndergaard</div>
+    <h1>Jeg er drevet af at udvikle og optimere mennesker.</h1>
+    <p>En ærlig, nysgerrig og helhedsorienteret tilgang, der vægter balancen mellem performance, trivsel og sundhed – både fysisk og mentalt.</p>
+  </header>
+
+  <main class="focuses reveal-stagger">
+    <a class="tile c-klinik reveal" href="klinik/">
+      <div class="bg"></div><div class="veil"></div>
+      <div class="body">
+        <div class="tag">Klinik</div>
+        <h2>Kropsbehandling</h2>
+        <p>Behandling der løsner op og fremskynder restitution. Book din tid i klinikken på Østerbro.</p>
+        <div class="go">Book tid →</div>
+      </div>
+    </a>
+
+    <a class="tile c-workout reveal" href="workout/">
+      <div class="bg"></div><div class="veil"></div>
+      <div class="body">
+        <div class="tag">Outdoor</div>
+        <h2>Udendørs træning</h2>
+        <p>TRX og funktionel træning under åben himmel, lige ved vandet. 12 pladser pr. hold.</p>
+        <div class="go">Tilmeld dig nu →</div>
+      </div>
+    </a>
+
+    <a class="tile c-pp reveal" href="people-performance/">
+      <div class="bg"></div><div class="veil"></div>
+      <div class="body">
+        <div class="tag">People &amp; Performance</div>
+        <h2>For virksomheder</h2>
+        <p>Performance, trivsel og selvledelse i organisationen. Det hele starter med mennesket.</p>
+        <div class="go">Lad os komme i gang →</div>
+      </div>
+    </a>
+
+    <a class="tile c-om reveal" href="om/">
+      <div class="bg"></div><div class="veil"></div>
+      <div class="body">
+        <div class="tag">Om</div>
+        <h2>Mennesket bag</h2>
+        <p>Historien, værdierne og tilgangen bag klinik, træning og People &amp; Performance. Lær Vinnie at kende.</p>
+        <div class="go">Læs mere →</div>
+      </div>
+    </a>
+  </main>
+
+  <!-- ===================================================================
+       CANONICAL SHARED FOOTER (see assets/css/tokens.css .site-footer)
+       This exact markup is duplicated on all four pages. Keep it identical;
+       only the asset/href path prefix differs ("" on the hub, "../" on
+       sub-sites) and tone is set via the .site-footer custom properties in
+       each page's <style>.
+       =================================================================== -->
+  <footer class="site-footer">
+    <div class="foot-inner">
+      <div>
+        <p class="foot-brand">Vinnie Davida Søndergaard</p>
+        <p>Jeg er drevet af at udvikle og optimere mennesker — klinik, udendørs træning og People &amp; Performance.</p>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <p><a href="tel:+4525616000">+45 25 61 60 00</a></p>
+        <p><a href="mailto:vinnie@davida-sondergaard.dk">vinnie@davida-sondergaard.dk</a></p>
+        <p>Vejlegade 12, kld. th.<br>2100 København Ø</p>
+        <p>CVR 30259939</p>
+      </div>
+      <div>
+        <h4>Følg med</h4>
+        <div class="social">
+          <a href="https://www.linkedin.com/search/results/all/?keywords=Vinnie%20Davida%20S%C3%B8ndergaard" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.facebook.com/lifepoweredthroughinside" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.instagram.com/vinnie_davida_sondergaard" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-base">
+      <div class="foot-legal">
+        <a href="privatlivspolitik.html">Privatlivspolitik</a>
+        <a href="cookie-politik.html">Cookie-politik</a>
+      </div>
+      © <span id="year">2026</span> Vinnie Davida Søndergaard · CVR 30259939
+    </div>
+  </footer>
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/reveal.js" defer></script>
+  <script src="assets/js/cookie.js" data-path-prefix="" defer></script>
+</body>
+</html>

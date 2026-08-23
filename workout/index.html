@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js');</script>
+<title>Workout — Udendørs TRX | Vinnie Davida Søndergaard</title>
+<link rel="canonical" href="https://rhjensen79.github.io/davida/workout/">
+<meta name="description" content="Udendørs TRX og funktionel træning under åben himmel, lige ved vandet. 12 pladser pr. hold. Tilmeld dig nu.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="../assets/images/source/favicon.png">
+<link rel="apple-touch-icon" href="../assets/images/source/favicon.png">
+<meta name="theme-color" content="#080d12">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vinnie Davida Søndergaard">
+<meta property="og:locale" content="da_DK">
+<meta property="og:title" content="Workout — Udendørs TRX | Vinnie Davida Søndergaard">
+<meta property="og:description" content="Udendørs TRX og funktionel træning under åben himmel, lige ved vandet. 12 pladser pr. hold. Tilmeld dig nu.">
+<meta property="og:url" content="https://rhjensen79.github.io/davida/workout/">
+<meta property="og:image" content="https://rhjensen79.github.io/davida/assets/images/source/split-trx.jpg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Workout — Udendørs TRX | Vinnie Davida Søndergaard">
+<meta name="twitter:description" content="Udendørs TRX og funktionel træning under åben himmel, lige ved vandet. 12 pladser pr. hold. Tilmeld dig nu.">
+<meta name="twitter:image" content="https://rhjensen79.github.io/davida/assets/images/source/split-trx.jpg">
+<!-- Preload the hero photo (a CSS background, otherwise discovered late) — the LCP element. -->
+<link rel="preload" as="image" href="../assets/images/source/split-trx.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<style>
+  /* Workout tone: bold, dark, energetic, punchy */
+  body { background: var(--c-near-black); color: #e9ece6; }
+  h1, h2, h3 { color: #fff; text-transform: uppercase; letter-spacing: .01em; }
+
+  .hero { position: relative; min-height: 92vh; display: flex; align-items: flex-end;
+    background: url('../assets/images/source/split-trx.jpg') center/cover; }
+  .hero::after { content:""; position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(8,13,18,.55) 0%, rgba(8,13,18,.35) 40%, rgba(8,13,18,.95) 100%); }
+  .hero .wrap { position: relative; z-index: 1; padding-bottom: 64px; padding-top: 120px; }
+  .hero h1 { font-size: clamp(44px, 9vw, 104px); font-weight: 700; line-height: .92; margin-bottom: 20px; }
+  .hero p { font-size: 19px; max-width: 50ch; color: #d4d8d0; margin-bottom: 30px; }
+
+  .stats { background: var(--c-sage); color: var(--c-near-black); }
+  .stats .wrap { display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap: 24px; padding: 44px 24px; text-align: center; }
+  .stats .n { font-family: var(--font-head); font-weight: 700; font-size: 46px; line-height: 1; }
+  .stats .l { text-transform: uppercase; letter-spacing: .12em; font-size: 13px; font-weight: 600; }
+
+  .about .wrap { max-width: 760px; }
+  .about h2 { font-size: clamp(28px,4vw,44px); margin-bottom: 20px; }
+  .about p { font-size: 18px; color: #c3c9bd; }
+
+  /* Outdoor gallery — authentic shots of the by-the-water holdtræning */
+  .outdoor .section-head { max-width: 760px; }
+  .outdoor .section-head h2 { font-size: clamp(26px,3.6vw,40px); }
+  .outdoor .section-head p { font-size: 17px; color: #c3c9bd; margin-top: 14px; max-width: 60ch; }
+  .outdoor-grid { display: grid; gap: 14px; grid-template-columns: repeat(3, 1fr); margin-top: 34px; }
+  .outdoor-grid figure { margin: 0; border-radius: 8px; overflow: hidden; aspect-ratio: 4/3;
+    border: 1px solid #1c252c; background: #11181f; }
+  .outdoor-grid img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+  .outdoor-grid figure:hover img { transform: scale(1.05); }
+  @media (max-width: 680px){ .outdoor-grid { grid-template-columns: 1fr; } }
+
+  .schedule .wrap { display: grid; gap: 48px; }
+  /* Each class type is a self-contained, duplicatable block. */
+  .class-type { display: grid; gap: 18px; }
+  .class-type-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 12px 16px;
+    border-bottom: 2px solid #2c3f46; padding-bottom: 14px; }
+  .class-type-head h3 { font-size: clamp(24px,3.5vw,38px); font-weight: 700; margin: 0; }
+  .class-type-head .badge { font-family: var(--font-head); font-weight: 600; text-transform: uppercase;
+    letter-spacing: .12em; font-size: 12px; padding: 5px 11px; border-radius: 999px;
+    background: var(--c-sage); color: var(--c-near-black); }
+  .class-type-head .lead { flex-basis: 100%; color:#c3c9bd; font-size: 16px; max-width: 60ch; margin: 0; }
+  .class-type .slots { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); }
+  .slot { border: 1px solid #2c3f46; border-radius: 8px; padding: 26px; background: #11181f; }
+  .slot .day { font-family: var(--font-head); font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--c-sage); }
+  .slot .time { font-family: var(--font-head); font-size: 30px; color:#fff; margin: 4px 0; }
+  .slot .spots { font-size: 14px; color:#8f978c; }
+
+  /* Per-slot capacity indicator (static mock numbers) */
+  .slot .capacity { margin-top: 14px; display: grid; gap: 8px; }
+  .slot .cap-bar { height: 7px; border-radius: 999px; background: #1c252c; overflow: hidden; }
+  .slot .cap-fill { display: block; height: 100%; border-radius: 999px; background: var(--c-sage); }
+  .slot .cap-fill--low { background: #e6b450; }       /* nearly full — amber */
+  .slot .cap-fill--full { background: #c4554d; }      /* sold out — red */
+  .slot .spots strong { color: #fff; font-family: var(--font-head); }
+  .slot .spots--full { color: #e08079; font-family: var(--font-head); font-weight: 600;
+    text-transform: uppercase; letter-spacing: .1em; }
+  /* Sold-out slot: visibly disabled */
+  .slot.is-full { opacity: .55; }
+  .slot.is-full .time { color: #8f978c; }
+
+  /* "Kommer snart" type: visually de-emphasized. */
+  .class-type.is-coming { opacity: .62; }
+  .class-type.is-coming .class-type-head { border-bottom-color: #1c252c; }
+  .class-type.is-coming .badge { background: transparent; color: var(--c-sage);
+    border: 1px solid #3a4d55; }
+  .class-type.is-coming .lead { color:#8f978c; }
+
+  .signup { text-align: center; background: #11181f; }
+  .signup h2 { font-size: clamp(30px,5vw,52px); }
+  .signup p { color:#c3c9bd; max-width: 46ch; margin: 0 auto 30px; font-size: 17px; }
+  /* Signup form: constrain width, left-align fields within the centered section */
+  .signup .signup-form { max-width: 620px; margin: 0 auto; text-align: left; }
+  .signup .signup-form .signup-submit { justify-self: start; margin-top: 6px; }
+  .signup select { color: var(--field-fg); }
+  /* Static confirmation/success panel (toggled visual-only) */
+  .signup-success { max-width: 620px; margin: 0 auto; padding: 40px 30px;
+    background: #11181f; border: 1px solid var(--c-sage); border-radius: 8px; text-align: center; }
+  .signup-success-mark { width: 56px; height: 56px; margin: 0 auto 18px; border-radius: 999px;
+    display: grid; place-items: center; background: var(--c-sage); color: var(--c-near-black);
+    font-family: var(--font-head); font-weight: 700; font-size: 30px; line-height: 1; }
+  .signup-success h3 { font-size: clamp(22px,3vw,30px); margin-bottom: 12px; }
+  .signup-success p { margin-bottom: 26px; }
+
+  /* Workout tone: dark, bold top-nav over the hero; near-black footer */
+  .site-nav { --nav-bg: rgba(8,13,18,.55); --nav-fg: #fff; --nav-border: rgba(255,255,255,.12); --nav-accent: var(--c-sage); }
+  .site-footer { --foot-bg: var(--c-near-black); --foot-fg: #8f978c; --foot-head: #fff; --foot-link: var(--c-sage); --foot-border: #1c252c; }
+</style>
+
+<!-- Structured data (#23): the outdoor TRX class as an offered service. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Udendørs TRX & funktionel holdtræning",
+  "name": "Udendørs TRX",
+  "description": "TRX og funktionel træning under åben himmel, lige ved vandet — styrke, puls, balance og teknik. 12 pladser pr. hold.",
+  "url": "https://rhjensen79.github.io/davida/workout/",
+  "image": "https://rhjensen79.github.io/davida/assets/images/source/split-trx.jpg",
+  "areaServed": { "@type": "City", "name": "København" },
+  "provider": {
+    "@type": "Person",
+    "name": "Vinnie Davida Søndergaard",
+    "telephone": "+4525616000",
+    "email": "vinnie@davida-sondergaard.dk"
+  }
+}
+</script>
+</head>
+<body class="focus-workout">
+  <!-- CANONICAL SHARED TOP-NAV (sub-sites) — see .site-nav in tokens.css. -->
+  <nav class="site-nav">
+    <a class="brand" href="../" aria-label="Vinnie Davida Søndergaard — forside">
+      <img src="../assets/images/source/logolight.png" alt="Vinnie Davida Søndergaard">
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Åbn menu" aria-expanded="false" aria-controls="primary-nav">
+      <span class="bars" aria-hidden="true"></span>
+    </button>
+    <div class="nav-links" id="primary-nav">
+      <a href="../">Forside</a>
+      <a href="../klinik/">Klinik</a>
+      <a href="../workout/" class="is-current">Workout</a>
+      <a href="../people-performance/">People &amp; Performance</a>
+      <a href="../om/">Om</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <span class="kicker">Udendørs holdtræning</span>
+      <h1>Træn under<br>åben himmel</h1>
+      <p>TRX og funktionel træning lige ved vandet — styrke, puls, balance og teknik. Høj kvalitet, godt humør og afsluttende afspænding.</p>
+      <a class="btn" href="#signup">Tilmeld dig nu</a>
+    </div>
+  </header>
+
+  <section class="section stats">
+    <div class="wrap reveal-stagger">
+      <div class="reveal"><div class="n">12</div><div class="l">pladser pr. hold</div></div>
+      <div class="reveal"><div class="n">60</div><div class="l">minutter</div></div>
+      <div class="reveal"><div class="n">100%</div><div class="l">udendørs</div></div>
+    </div>
+  </section>
+
+  <section class="section about">
+    <div class="wrap">
+      <h2>Invester i din styrke og dit immunforsvar</h2>
+      <p>Har du lyst til at investere i din sundhed, din styrke og dit immunforsvar? Så kom med under åben himmel. I smukke omgivelser lige ved vandet guider jeg dig igennem en time med både styrke, puls, balance og teknik. Træningen er altid med høj kvalitet, godt humør og afsluttende afspænding.</p>
+    </div>
+  </section>
+
+  <section class="section outdoor">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Lige ved vandet</span>
+        <h2>Sådan ser det ud</h2>
+        <p>Vi træner under åben himmel på bryggen tæt på vandet — TRX, funktionel styrke og puls i smukke omgivelser. Maks 12 på holdet, så der er plads til alle.</p>
+      </div>
+      <div class="outdoor-grid reveal-stagger">
+        <figure class="reveal">
+          <img src="../assets/images/workout-udendoers-1.webp" alt="Udendørs holdtræning med TRX på bryggen ved vandet" loading="lazy" width="1500" height="844">
+        </figure>
+        <figure class="reveal">
+          <img src="../assets/images/workout-udendoers-2.webp" alt="Funktionel træning på bryggen tæt på vandet" loading="lazy" width="1500" height="844">
+        </figure>
+        <figure class="reveal">
+          <img src="../assets/images/workout-udendoers-3.webp" alt="Hold i gang med udendørs TRX-træning ved havnen" loading="lazy" width="1500" height="844">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section schedule">
+    <div class="wrap reveal-stagger">
+
+      <!-- CLASS TYPE: duplicate this whole <article class="class-type"> block to add a new type. -->
+      <article class="class-type reveal">
+        <header class="class-type-head">
+          <h3>Udendørs TRX</h3>
+          <span class="badge">12 pladser pr. hold</span>
+          <p class="lead">TRX og funktionel træning lige ved vandet — styrke, puls, balance og teknik, med afsluttende afspænding.</p>
+        </header>
+        <!-- Capacity numbers below are STATIC MOCK values (non-functional). -->
+        <div class="slots">
+          <div class="slot">
+            <div class="day">Mandag</div>
+            <div class="time">06:30</div>
+            <div class="capacity">
+              <div class="cap-bar" role="img" aria-label="2 af 12 pladser tilbage">
+                <span class="cap-fill cap-fill--low" style="width:83%"></span>
+              </div>
+              <div class="spots"><strong>2</strong> af 12 pladser tilbage</div>
+            </div>
+          </div>
+          <div class="slot">
+            <div class="day">Onsdag</div>
+            <div class="time">17:00</div>
+            <div class="capacity">
+              <div class="cap-bar" role="img" aria-label="7 af 12 pladser tilbage">
+                <span class="cap-fill" style="width:42%"></span>
+              </div>
+              <div class="spots"><strong>7</strong> af 12 pladser tilbage</div>
+            </div>
+          </div>
+          <div class="slot is-full" aria-disabled="true">
+            <div class="day">Lørdag</div>
+            <div class="time">09:00</div>
+            <div class="capacity">
+              <div class="cap-bar" role="img" aria-label="Fuldt booket">
+                <span class="cap-fill cap-fill--full" style="width:100%"></span>
+              </div>
+              <div class="spots spots--full">FULDT BOOKET</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CLASS TYPE (placeholder): proves extensibility — no slots until launch. -->
+      <article class="class-type is-coming reveal">
+        <header class="class-type-head">
+          <h3>Funktionel styrke</h3>
+          <span class="badge">Kommer snart</span>
+          <p class="lead">Et nyt udendørs holdformat med fokus på rå styrke og bevægelighed. Hold dig opdateret — datoer følger snart.</p>
+        </header>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SIGNUP — NON-FUNCTIONAL MOCK. The form does not submit anywhere; the
+       "Tilmeld dig nu" button is type=button and only toggles a static
+       confirmation panel via signup.js (visual demo only, no backend).
+       ===================================================================== -->
+  <section class="section signup" id="signup">
+    <div class="wrap">
+      <h2>Sikr dig en plads</h2>
+      <p>Der er kun 12 pladser på hvert hold. Skriv dig op, så vender jeg tilbage med det hele.</p>
+
+      <form class="form signup-form reveal" id="signup-form" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="su-navn">Navn</label>
+            <input id="su-navn" name="navn" type="text" placeholder="Dit fulde navn" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="su-email">Email</label>
+            <input id="su-email" name="email" type="email" placeholder="dig@email.dk" autocomplete="email">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="su-tlf">Telefon</label>
+            <input id="su-tlf" name="telefon" type="tel" placeholder="+45 12 34 56 78" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="su-hold">Vælg hold / tid</label>
+            <select id="su-hold" name="hold">
+              <option value="" selected>Vælg et hold…</option>
+              <optgroup label="Udendørs TRX">
+                <option value="ma-0630">Mandag 06:30 — 2 pladser tilbage</option>
+                <option value="on-1700">Onsdag 17:00 — 7 pladser tilbage</option>
+                <option value="lo-0900" disabled>Lørdag 09:00 — FULDT BOOKET</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="su-besked">Besked</label>
+          <textarea id="su-besked" name="besked" placeholder="Har du spørgsmål, skader eller særlige ønsker? Skriv det her."></textarea>
+        </div>
+        <button class="btn signup-submit" type="button" id="signup-submit">Tilmeld dig nu</button>
+      </form>
+
+      <!-- Static confirmation/success state — hidden until the button toggles it. -->
+      <div class="signup-success" id="signup-success" hidden>
+        <div class="signup-success-mark" aria-hidden="true">✓</div>
+        <h3>Tak for din tilmelding — du er på holdet!</h3>
+        <p>Vi har modtaget din tilmelding og vender tilbage med en bekræftelse på mail. Vi ses under åben himmel.</p>
+        <button class="btn ghost" type="button" id="signup-reset">Tilmeld endnu en</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CANONICAL SHARED FOOTER — identical across all pages (see tokens.css). -->
+  <footer class="site-footer">
+    <div class="foot-inner">
+      <div>
+        <p class="foot-brand">Vinnie Davida Søndergaard</p>
+        <p>Jeg er drevet af at udvikle og optimere mennesker — klinik, udendørs træning og People &amp; Performance.</p>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <p><a href="tel:+4525616000">+45 25 61 60 00</a></p>
+        <p><a href="mailto:vinnie@davida-sondergaard.dk">vinnie@davida-sondergaard.dk</a></p>
+        <p>Vejlegade 12, kld. th.<br>2100 København Ø</p>
+        <p>CVR 30259939</p>
+      </div>
+      <div>
+        <h4>Følg med</h4>
+        <div class="social">
+          <a href="https://www.linkedin.com/search/results/all/?keywords=Vinnie%20Davida%20S%C3%B8ndergaard" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.facebook.com/lifepoweredthroughinside" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.instagram.com/vinnie_davida_sondergaard" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-base">
+      <div class="foot-legal">
+        <a href="../privatlivspolitik.html">Privatlivspolitik</a>
+        <a href="../cookie-politik.html">Cookie-politik</a>
+      </div>
+      © <span id="year">2026</span> Vinnie Davida Søndergaard · CVR 30259939
+    </div>
+  </footer>
+  <script src="../assets/js/nav.js" defer></script>
+  <script src="../assets/js/reveal.js" defer></script>
+  <!-- Visual-only signup toggle (non-functional mock) — see assets/js/signup.js. -->
+  <script src="../assets/js/signup.js" defer></script>
+  <script src="../assets/js/cookie.js" data-path-prefix="../" defer></script>
+</body>
+</html>
