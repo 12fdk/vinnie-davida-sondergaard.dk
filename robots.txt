@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vinnie-davida-sondergaard.dk/sitemap.xml
