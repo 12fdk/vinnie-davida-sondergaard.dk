@@ -423,6 +423,11 @@ a { color: inherit; }
 .site-footer .foot-legal a { font-size: 14px; text-decoration: none; opacity: .9; }
 .site-footer .foot-legal a:hover { opacity: 1; text-decoration: underline; }
 
+/* Build credit ("Bygget af 12F") — its own line under the copyright in .foot-base. */
+.site-footer .foot-credit { display: block; margin-top: 8px; opacity: .7; }
+.site-footer .foot-credit a { text-decoration: none; border-bottom: 1px solid currentColor; }
+.site-footer .foot-credit a:hover { opacity: 1; }
+
 /* ==========================================================================
    COOKIE CONSENT BANNER (#16) — shared, dismissible, visual-only.
    Markup is injected/toggled by assets/js/cookie.js. The banner is hidden
