@@ -423,10 +423,13 @@ a { color: inherit; }
 .site-footer .foot-legal a { font-size: 14px; text-decoration: none; opacity: .9; }
 .site-footer .foot-legal a:hover { opacity: 1; text-decoration: underline; }
 
-/* Build credit ("Bygget af 12F") — its own line under the copyright in .foot-base. */
-.site-footer .foot-credit { display: block; margin-top: 8px; opacity: .7; }
-.site-footer .foot-credit a { text-decoration: none; border-bottom: 1px solid currentColor; }
-.site-footer .foot-credit a:hover { opacity: 1; }
+/* Build credit ("Bygget af 12F") — its own line under the copyright in .foot-base.
+   Sets no type or opacity of its own, so it inherits .foot-base exactly like the
+   copyright line above it; the link follows the same convention as .foot-legal a
+   and .social a (no underline until hover). */
+.site-footer .foot-credit { display: block; margin-top: 8px; }
+.site-footer .foot-credit a { text-decoration: none; opacity: .9; }
+.site-footer .foot-credit a:hover { opacity: 1; text-decoration: underline; }
 
 /* ==========================================================================
    COOKIE CONSENT BANNER (#16) — shared, dismissible, visual-only.
