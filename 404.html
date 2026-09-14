@@ -30,9 +30,11 @@
 <meta property="og:description" content="Vi kunne ikke finde den side, du ledte efter.">
 <meta property="og:url" content="https://vinnie-davida-sondergaard.dk/">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Self-hosted variable fonts (see @font-face in tokens.css). Preloaded so they
+     land with the stylesheet instead of a paint later — no third-party font
+     request, no preconnect, nothing blocking the first paint. -->
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/oswald-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/worksans-latin.woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/tokens.css">
 <style>
   body { background: var(--c-wash); min-height: 100vh; display: flex; flex-direction: column; }

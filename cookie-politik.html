@@ -12,9 +12,11 @@
 <link rel="apple-touch-icon" href="assets/images/source/favicon.png">
 <meta name="theme-color" content="#2c3f46">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Self-hosted variable fonts (see @font-face in tokens.css). Preloaded so they
+     land with the stylesheet instead of a paint later — no third-party font
+     request, no preconnect, nothing blocking the first paint. -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/worksans-latin.woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/tokens.css">
 <style>
   body { background: #fff; }
@@ -93,14 +95,14 @@
         <p>Jeg er drevet af at udvikle og optimere mennesker — klinik, udendørs træning og People &amp; Performance.</p>
       </div>
       <div>
-        <h4>Kontakt</h4>
+        <h2 class="foot-head">Kontakt</h2>
         <p><a href="tel:+4525616000">+45 25 61 60 00</a></p>
         <p><a href="mailto:vinnie@davida-sondergaard.dk">vinnie@davida-sondergaard.dk</a></p>
         <p>Vejlegade 12, kld. th.<br>2100 København Ø</p>
         <p>CVR 30259939</p>
       </div>
       <div>
-        <h4>Følg med</h4>
+        <h2 class="foot-head">Følg med</h2>
         <div class="social">
           <a href="https://www.linkedin.com/search/results/all/?keywords=Vinnie%20Davida%20S%C3%B8ndergaard" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://www.facebook.com/lifepoweredthroughinside" target="_blank" rel="noopener">Facebook</a>

@@ -30,10 +30,12 @@
 <meta name="twitter:description" content="Jeg er drevet af at udvikle og optimere mennesker — fysiurgisk massage, udendørs TRX-træning og People & Performance til mennesker og organisationer.">
 <meta name="twitter:image" content="https://vinnie-davida-sondergaard.dk/assets/images/source/vinnie-davida-soendergaard-photo-martin-kaufmann-dsc-3793.jpg">
 <!-- Preload the first (top-left) focus-tile image — the likely LCP element. -->
-<link rel="preload" as="image" href="assets/images/source/vinnie-davida-soendergaard-photo-martin-kaufmann-dsc-4499.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/images/source/vinnie-davida-soendergaard-photo-martin-kaufmann-dsc-4499-800.webp" fetchpriority="high">
+<!-- Self-hosted variable fonts (see @font-face in tokens.css). Preloaded so they
+     land with the stylesheet instead of a paint later — no third-party font
+     request, no preconnect, nothing blocking the first paint. -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/worksans-latin.woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/tokens.css">
 <style>
   body { background: var(--c-wash); }
@@ -72,20 +74,20 @@
     border-top: 1px solid rgba(255,255,255,.3); padding-top: 14px; }
 
   /* Klinik — light & calm */
-  .c-klinik .bg { background-image: url('assets/images/source/vinnie-davida-soendergaard-photo-martin-kaufmann-dsc-4499.jpg'); }
+  .c-klinik .bg { background-image: url('assets/images/source/vinnie-davida-soendergaard-photo-martin-kaufmann-dsc-4499-800.webp'); }
   .c-klinik .veil { background: linear-gradient(180deg, rgba(240,243,240,0) 30%, rgba(44,63,70,.78) 100%); }
 
   /* Workout — bold & dark */
-  .c-workout .bg { background-image: url('assets/images/source/split-trx.jpg'); }
+  .c-workout .bg { background-image: url('assets/images/source/split-trx-800.webp'); }
   .c-workout .veil { background: linear-gradient(180deg, rgba(8,13,18,.15) 20%, rgba(8,13,18,.88) 100%); }
   .c-workout h2 { text-transform: uppercase; letter-spacing: .02em; }
 
   /* People & Performance — refined slate */
-  .c-pp .bg { background-image: url('assets/images/source/vinnie-davida-soendergaard-photo-martin-kaufmann-dsc-3914-1.jpg'); }
+  .c-pp .bg { background-image: url('assets/images/source/vinnie-davida-soendergaard-photo-martin-kaufmann-dsc-3914-1-800.webp'); }
   .c-pp .veil { background: linear-gradient(180deg, rgba(44,63,70,.25) 0%, rgba(44,63,70,.92) 100%); }
 
   /* Om — same image-tile style and size as the other three. */
-  .c-om .bg { background-image: url('assets/images/source/vinnie-davida-soendergaard-portrait-muusfoto.jpg');
+  .c-om .bg { background-image: url('assets/images/source/vinnie-davida-soendergaard-portrait-muusfoto-800.webp');
     background-position: center top; }
   .c-om .veil { background: linear-gradient(180deg, rgba(8,13,18,.12) 25%, rgba(8,13,18,.9) 100%); }
 
@@ -97,26 +99,198 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Vinnie Davida Søndergaard",
-  "url": "https://vinnie-davida-sondergaard.dk/",
-  "image": "https://vinnie-davida-sondergaard.dk/assets/images/source/vinnie-davida-soendergaard-portrait-muusfoto.jpg",
-  "jobTitle": "Fysiurgisk massør, træner & people-and-performance-rådgiver",
-  "description": "Jeg er drevet af at udvikle og optimere mennesker — fysiurgisk massage, udendørs TRX-træning og People & Performance til mennesker og organisationer.",
-  "telephone": "+4525616000",
-  "email": "vinnie@davida-sondergaard.dk",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Vejlegade 12, kld. th.",
-    "postalCode": "2100",
-    "addressLocality": "København Ø",
-    "addressCountry": "DK"
-  },
-  "sameAs": [
-    "https://www.facebook.com/lifepoweredthroughinside",
-    "https://www.instagram.com/vinnie_davida_sondergaard"
-  ],
-  "knowsAbout": ["Fysiurgisk massage", "TRX", "Funktionel træning", "Performance", "Trivsel", "Selvledelse"]
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://vinnie-davida-sondergaard.dk/#website",
+      "url": "https://vinnie-davida-sondergaard.dk/",
+      "name": "Vinnie Davida Søndergaard",
+      "description": "Fysiurgisk massage, udendørs TRX-træning og People & Performance til mennesker og organisationer.",
+      "inLanguage": "da-DK",
+      "publisher": {
+        "@id": "https://vinnie-davida-sondergaard.dk/#person"
+      },
+      "copyrightHolder": {
+        "@id": "https://vinnie-davida-sondergaard.dk/#person"
+      }
+    },
+    {
+      "@type": "PostalAddress",
+      "@id": "https://vinnie-davida-sondergaard.dk/#address",
+      "streetAddress": "Vejlegade 12, kld. th.",
+      "postalCode": "2100",
+      "addressLocality": "København Ø",
+      "addressRegion": "Hovedstaden",
+      "addressCountry": "DK"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://vinnie-davida-sondergaard.dk/#person",
+      "name": "Vinnie Davida Søndergaard",
+      "givenName": "Vinnie",
+      "familyName": "Søndergaard",
+      "url": "https://vinnie-davida-sondergaard.dk/",
+      "mainEntityOfPage": {
+        "@id": "https://vinnie-davida-sondergaard.dk/om/#webpage"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://vinnie-davida-sondergaard.dk/assets/images/source/vinnie-davida-soendergaard-portrait-muusfoto.jpg",
+        "width": 1100,
+        "height": 1032
+      },
+      "jobTitle": [
+        "Fysiurgisk massør",
+        "Personlig træner",
+        "People & Performance-rådgiver"
+      ],
+      "description": "Drevet af at udvikle og optimere mennesker. Tidligere professionel bokser og europamester, i dag fysiurgisk massør, træner og people-and-performance-rådgiver med klinik på Østerbro i København.",
+      "birthDate": "1980",
+      "birthPlace": {
+        "@type": "Place",
+        "name": "Vejle, Danmark"
+      },
+      "nationality": {
+        "@type": "Country",
+        "name": "Danmark"
+      },
+      "knowsLanguage": [
+        "da",
+        "en"
+      ],
+      "gender": "Female",
+      "telephone": "+4525616000",
+      "email": "vinnie@davida-sondergaard.dk",
+      "address": {
+        "@id": "https://vinnie-davida-sondergaard.dk/#address"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "CVR",
+        "value": "30259939"
+      },
+      "sameAs": [
+        "https://www.facebook.com/lifepoweredthroughinside",
+        "https://www.instagram.com/vinnie_davida_sondergaard"
+      ],
+      "knowsAbout": [
+        "Fysiurgisk massage",
+        "Kranio-sakral terapi",
+        "Kropsbehandling",
+        "TRX Suspension Training",
+        "Funktionel træning",
+        "Restitution",
+        "Performance",
+        "Trivsel",
+        "Selvledelse",
+        "Talentudvikling",
+        "Ergonomi og APV"
+      ],
+      "award": [
+        "2× Europamester som amatørbokser — første kvinde i Danmarks historie",
+        "EU-mester og kåret som bedste bokser",
+        "VM-bronze som amatørbokser",
+        "5× jysk mester, 4× dansk mester og 3× nordisk mester",
+        "EBU Europamester som professionel bokser",
+        "WBC junior-mester",
+        "WIBF-mester"
+      ],
+      "hasOccupation": [
+        {
+          "@type": "Occupation",
+          "name": "Fysiurgisk massør"
+        },
+        {
+          "@type": "Occupation",
+          "name": "Personlig træner"
+        },
+        {
+          "@type": "Occupation",
+          "name": "Bokser",
+          "occupationalCategory": "Professionel bokser 2007–2011"
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Fysiurgisk massør",
+          "credentialCategory": "Erhvervsuddannelse",
+          "dateCreated": "2007"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Kranio-sakral terapeut",
+          "credentialCategory": "Erhvervsuddannelse",
+          "dateCreated": "2008"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Biodynamisk kranio-sakral terapeut",
+          "credentialCategory": "Erhvervsuddannelse",
+          "dateCreated": "2017"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "TRX Suspension Training Coach (STC, SMSTC, FTC)",
+          "credentialCategory": "Trænercertificering",
+          "dateCreated": "2010"
+        }
+      ],
+      "worksFor": [
+        {
+          "@id": "https://vinnie-davida-sondergaard.dk/klinik/#clinic"
+        },
+        {
+          "@id": "https://vinnie-davida-sondergaard.dk/people-performance/#practice"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://vinnie-davida-sondergaard.dk/#webpage",
+      "url": "https://vinnie-davida-sondergaard.dk/",
+      "name": "Vinnie Davida Søndergaard — Klinik, Workout & People & Performance",
+      "description": "Jeg er drevet af at udvikle og optimere mennesker — fysiurgisk massage, udendørs TRX-træning og People & Performance til mennesker og organisationer.",
+      "isPartOf": {
+        "@id": "https://vinnie-davida-sondergaard.dk/#website"
+      },
+      "inLanguage": "da-DK",
+      "about": {
+        "@id": "https://vinnie-davida-sondergaard.dk/#person"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://vinnie-davida-sondergaard.dk/#focuses",
+      "name": "Fokusområder",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Klinik — fysiurgisk massage",
+          "url": "https://vinnie-davida-sondergaard.dk/klinik/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Workout — udendørs TRX",
+          "url": "https://vinnie-davida-sondergaard.dk/workout/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "People & Performance",
+          "url": "https://vinnie-davida-sondergaard.dk/people-performance/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Om Vinnie",
+          "url": "https://vinnie-davida-sondergaard.dk/om/"
+        }
+      ]
+    }
+  ]
 }
 </script>
 
@@ -187,14 +361,14 @@
         <p>Jeg er drevet af at udvikle og optimere mennesker — klinik, udendørs træning og People &amp; Performance.</p>
       </div>
       <div>
-        <h4>Kontakt</h4>
+        <h2 class="foot-head">Kontakt</h2>
         <p><a href="tel:+4525616000">+45 25 61 60 00</a></p>
         <p><a href="mailto:vinnie@davida-sondergaard.dk">vinnie@davida-sondergaard.dk</a></p>
         <p>Vejlegade 12, kld. th.<br>2100 København Ø</p>
         <p>CVR 30259939</p>
       </div>
       <div>
-        <h4>Følg med</h4>
+        <h2 class="foot-head">Følg med</h2>
         <div class="social">
           <a href="https://www.linkedin.com/search/results/all/?keywords=Vinnie%20Davida%20S%C3%B8ndergaard" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://www.facebook.com/lifepoweredthroughinside" target="_blank" rel="noopener">Facebook</a>
