@@ -28,10 +28,12 @@
 <meta name="twitter:description" content="Udendørs TRX og funktionel træning under åben himmel, lige ved vandet. 12 pladser pr. hold. Tilmeld dig nu.">
 <meta name="twitter:image" content="https://vinnie-davida-sondergaard.dk/assets/images/source/split-trx.jpg">
 <!-- Preload the hero photo (a CSS background, otherwise discovered late) — the LCP element. -->
-<link rel="preload" as="image" href="../assets/images/source/split-trx.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="../assets/images/source/split-trx.webp" fetchpriority="high">
+<!-- Self-hosted variable fonts (see @font-face in tokens.css). Preloaded so they
+     land with the stylesheet instead of a paint later — no third-party font
+     request, no preconnect, nothing blocking the first paint. -->
+<link rel="preload" as="font" type="font/woff2" href="../assets/fonts/oswald-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="../assets/fonts/worksans-latin.woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/tokens.css">
 <style>
   /* Workout tone: bold, dark, energetic, punchy */
@@ -39,7 +41,7 @@
   h1, h2, h3 { color: #fff; text-transform: uppercase; letter-spacing: .01em; }
 
   .hero { position: relative; min-height: 92vh; display: flex; align-items: flex-end;
-    background: url('../assets/images/source/split-trx.jpg') center/cover; }
+    background: url('../assets/images/source/split-trx.webp') center/cover; }
   .hero::after { content:""; position:absolute; inset:0;
     background: linear-gradient(180deg, rgba(8,13,18,.55) 0%, rgba(8,13,18,.35) 40%, rgba(8,13,18,.95) 100%); }
   .hero .wrap { position: relative; z-index: 1; padding-bottom: 64px; padding-top: 120px; }
@@ -96,11 +98,11 @@
   .slot.is-full .time { color: #8f978c; }
 
   /* "Kommer snart" type: visually de-emphasized. */
-  .class-type.is-coming { opacity: .62; }
+  .class-type.is-coming { opacity: .75; }
   .class-type.is-coming .class-type-head { border-bottom-color: #1c252c; }
   .class-type.is-coming .badge { background: transparent; color: var(--c-sage);
     border: 1px solid #3a4d55; }
-  .class-type.is-coming .lead { color:#8f978c; }
+  .class-type.is-coming .lead { color:#a8b0a4; }
 
   .signup { text-align: center; background: #11181f; }
   .signup h2 { font-size: clamp(30px,5vw,52px); }
@@ -127,19 +129,98 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Udendørs TRX & funktionel holdtræning",
-  "name": "Udendørs TRX",
-  "description": "TRX og funktionel træning under åben himmel, lige ved vandet — styrke, puls, balance og teknik. 12 pladser pr. hold.",
-  "url": "https://vinnie-davida-sondergaard.dk/workout/",
-  "image": "https://vinnie-davida-sondergaard.dk/assets/images/source/split-trx.jpg",
-  "areaServed": { "@type": "City", "name": "København" },
-  "provider": {
-    "@type": "Person",
-    "name": "Vinnie Davida Søndergaard",
-    "telephone": "+4525616000",
-    "email": "vinnie@davida-sondergaard.dk"
-  }
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://vinnie-davida-sondergaard.dk/workout/#trx",
+      "serviceType": "Udendørs TRX & funktionel holdtræning",
+      "name": "Udendørs TRX",
+      "description": "TRX og funktionel træning under åben himmel lige ved vandet — styrke, puls, balance og teknik, med afsluttende afspænding. Maks 12 pladser pr. hold.",
+      "url": "https://vinnie-davida-sondergaard.dk/workout/",
+      "image": "https://vinnie-davida-sondergaard.dk/assets/images/source/split-trx.jpg",
+      "areaServed": {
+        "@type": "City",
+        "name": "København"
+      },
+      "provider": {
+        "@id": "https://vinnie-davida-sondergaard.dk/#person"
+      },
+      "brand": {
+        "@id": "https://vinnie-davida-sondergaard.dk/#person"
+      },
+      "audience": {
+        "@type": "Audience",
+        "name": "Voksne på alle niveauer"
+      },
+      "availableLanguage": {
+        "@type": "Language",
+        "name": "Dansk",
+        "alternateName": "da"
+      },
+      "category": "Holdtræning",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://vinnie-davida-sondergaard.dk/workout/#signup",
+        "availability": "https://schema.org/LimitedAvailability",
+        "priceCurrency": "DKK",
+        "eligibleQuantity": {
+          "@type": "QuantitativeValue",
+          "maxValue": 12,
+          "unitText": "pladser pr. hold"
+        }
+      },
+      "potentialAction": {
+        "@type": "RegisterAction",
+        "name": "Tilmeld dig nu",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://vinnie-davida-sondergaard.dk/workout/#signup",
+          "actionPlatform": [
+            "https://schema.org/DesktopWebPlatform",
+            "https://schema.org/MobileWebPlatform"
+          ]
+        }
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://vinnie-davida-sondergaard.dk/workout/#webpage",
+      "url": "https://vinnie-davida-sondergaard.dk/workout/",
+      "name": "Workout — Udendørs TRX | Vinnie Davida Søndergaard",
+      "description": "Udendørs TRX og funktionel træning under åben himmel, lige ved vandet. 12 pladser pr. hold. Tilmeld dig nu.",
+      "isPartOf": {
+        "@id": "https://vinnie-davida-sondergaard.dk/#website"
+      },
+      "inLanguage": "da-DK",
+      "about": {
+        "@id": "https://vinnie-davida-sondergaard.dk/workout/#trx"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://vinnie-davida-sondergaard.dk/assets/images/source/split-trx.jpg"
+      },
+      "breadcrumb": {
+        "@id": "https://vinnie-davida-sondergaard.dk/workout/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://vinnie-davida-sondergaard.dk/workout/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Forside",
+          "item": "https://vinnie-davida-sondergaard.dk/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Workout"
+        }
+      ]
+    }
+  ]
 }
 </script>
 
@@ -151,7 +232,7 @@
   <!-- CANONICAL SHARED TOP-NAV (sub-sites) — see .site-nav in tokens.css. -->
   <nav class="site-nav">
     <a class="brand" href="../" aria-label="Vinnie Davida Søndergaard — forside">
-      <img src="../assets/images/source/logolight.png" alt="Vinnie Davida Søndergaard">
+      <img src="../assets/images/logo-wordmark.png" alt="Vinnie Davida Søndergaard" width="95" height="30" fetchpriority="high">
     </a>
     <button class="nav-toggle" type="button" aria-label="Åbn menu" aria-expanded="false" aria-controls="primary-nav">
       <span class="bars" aria-hidden="true"></span>
@@ -198,13 +279,22 @@
       </div>
       <div class="outdoor-grid reveal-stagger">
         <figure class="reveal">
-          <img src="../assets/images/workout-udendoers-1.webp" alt="Udendørs holdtræning med TRX på bryggen ved vandet" loading="lazy" width="1500" height="844">
+          <img src="../assets/images/workout-udendoers-1.webp"
+               srcset="../assets/images/workout-udendoers-1-760.webp 760w,
+                       ../assets/images/workout-udendoers-1.webp 1500w"
+               sizes="(max-width: 680px) calc(100vw - 40px), 33vw" alt="Udendørs holdtræning med TRX på bryggen ved vandet" loading="lazy" width="1500" height="844">
         </figure>
         <figure class="reveal">
-          <img src="../assets/images/workout-udendoers-2.webp" alt="Funktionel træning på bryggen tæt på vandet" loading="lazy" width="1500" height="844">
+          <img src="../assets/images/workout-udendoers-2.webp"
+               srcset="../assets/images/workout-udendoers-2-760.webp 760w,
+                       ../assets/images/workout-udendoers-2.webp 1500w"
+               sizes="(max-width: 680px) calc(100vw - 40px), 33vw" alt="Funktionel træning på bryggen tæt på vandet" loading="lazy" width="1500" height="844">
         </figure>
         <figure class="reveal">
-          <img src="../assets/images/workout-udendoers-3.webp" alt="Hold i gang med udendørs TRX-træning ved havnen" loading="lazy" width="1500" height="844">
+          <img src="../assets/images/workout-udendoers-3.webp"
+               srcset="../assets/images/workout-udendoers-3-760.webp 760w,
+                       ../assets/images/workout-udendoers-3.webp 1500w"
+               sizes="(max-width: 680px) calc(100vw - 40px), 33vw" alt="Hold i gang med udendørs TRX-træning ved havnen" loading="lazy" width="1500" height="844">
         </figure>
       </div>
     </div>
@@ -330,14 +420,14 @@
         <p>Jeg er drevet af at udvikle og optimere mennesker — klinik, udendørs træning og People &amp; Performance.</p>
       </div>
       <div>
-        <h4>Kontakt</h4>
+        <h2 class="foot-head">Kontakt</h2>
         <p><a href="tel:+4525616000">+45 25 61 60 00</a></p>
         <p><a href="mailto:vinnie@davida-sondergaard.dk">vinnie@davida-sondergaard.dk</a></p>
         <p>Vejlegade 12, kld. th.<br>2100 København Ø</p>
         <p>CVR 30259939</p>
       </div>
       <div>
-        <h4>Følg med</h4>
+        <h2 class="foot-head">Følg med</h2>
         <div class="social">
           <a href="https://www.linkedin.com/search/results/all/?keywords=Vinnie%20Davida%20S%C3%B8ndergaard" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://www.facebook.com/lifepoweredthroughinside" target="_blank" rel="noopener">Facebook</a>
